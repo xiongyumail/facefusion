@@ -161,9 +161,6 @@ def finalize_image(target_path : str, output_path : str, output_image_resolution
 
 
 def calc_image_compression(image_path : str, image_quality : int) -> int:
-	is_webp = filetype.guess_mime(image_path) == 'image/webp'
-	if is_webp:
-		image_quality = 100 - image_quality
 	return round(31 - (image_quality * 0.31))
 
 
